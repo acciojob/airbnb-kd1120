@@ -18,12 +18,15 @@ public class HotelManagementRepository {
 
 
     public String addHotel(Hotel hotel) {
-        if(hotel == null || hotel.getHotelName() == null || hotel.getHotelName().length() == 0)
-            return "NUll";
-        if(hotelDb.containsKey(hotel.getHotelName()))
-            return "FAILURE";
+        if(hotel == null || hotel.getHotelName() == null || hotel.getHotelName().length() == 0){
 
-        else
+            return "null";
+        }
+        if(hotelDb.containsKey(hotel.getHotelName())) {
+            return "FAILURE";
+        }
+
+
         hotelDb.put(hotel.getHotelName(), hotel);
 
         return "SUCCESS";
