@@ -20,7 +20,7 @@ public class HotelManagementRepository {
     public String addHotel(Hotel hotel) {
         if(hotel == null || hotel.getHotelName() == null || hotel.getHotelName().length() == 0){
 
-            return "null";
+            return "FAILURE";
         }
         if(hotelDb.containsKey(hotel.getHotelName())) {
             return "FAILURE";
