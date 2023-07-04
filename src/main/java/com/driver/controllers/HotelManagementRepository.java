@@ -19,11 +19,13 @@ public class HotelManagementRepository {
 
     public String addHotel(Hotel hotel) {
         if(hotel == null || hotel.getHotelName() == null || hotel.getHotelName().length() == 0)
-            return "FAILURE";
+            return "NUll";
         if(hotelDb.containsKey(hotel.getHotelName()))
             return "FAILURE";
 
+        else
         hotelDb.put(hotel.getHotelName(), hotel);
+
         return "SUCCESS";
     }
 
